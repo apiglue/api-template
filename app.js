@@ -1,16 +1,16 @@
 const express = require('express');
-const winston = require('winston');
+const logger = require('./config/winston');
 
 const app = express();
 const processport = process.env.PROCESS_PORT;
-winston.level = process.env.LOG_LEVEL;
 
-app.get('/', (req, res) => {
-  res.end("Hello world !");
-});
+app.use(require('morgan')('combined', { stream: logger.stream }));
 
 app.listen(processport, () => {
-  winston.log('info', 'Process up at port', {
-    processPort: processport,
-  });
+  logger.info(`Process up at port ${processport}`);
 });
+
+app.all('/*', (req, res) => {
+  res.end(`process ${process.pid} says hello!`);
+});
+

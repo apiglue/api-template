@@ -1,0 +1,12 @@
+{"level":"info","message":"Log level: info","timestamp":"14:37:19"}
+{"level":"info","message":"Master cluster setting up with 4 workers","timestamp":"14:37:19"}
+{"level":"info","message":"Worker 3765 is online","timestamp":"14:37:19"}
+{"level":"info","message":"Worker 3768 is online","timestamp":"14:37:19"}
+{"level":"info","message":"Worker 3767 is online","timestamp":"14:37:19"}
+{"level":"info","message":"Worker 3766 is online","timestamp":"14:37:19"}
+{"level":"info","message":"Process up at port 3000","timestamp":"14:37:19"}
+{"level":"info","message":"Process up at port 3000","timestamp":"14:37:19"}
+{"level":"info","message":"Process up at port 3000","timestamp":"14:37:19"}
+{"level":"info","message":"Process up at port 3000","timestamp":"14:37:19"}
+{"level":"info","message":"::1 - - [23/Mar/2018:18:37:26 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\"\n","timestamp":"14:37:26"}
+{"level":"info","message":"::1 - - [23/Mar/2018:18:37:26 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\"\n","timestamp":"14:37:26"}
