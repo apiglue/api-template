@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('./config/winston');
 
 const app = express();
-const processport = process.env.PROCESS_PORT;
+const processport = process.env.PORT;
 
 app.use(require('morgan')('combined', { stream: logger.stream }));
 
