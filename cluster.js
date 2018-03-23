@@ -1,18 +1,27 @@
-//https://codeforgeek.com/2014/12/cluster-node-js-performance/
-var cluster = require('cluster');
-var numCPUs = require('os').cpus().length;
+// https://codeforgeek.com/2014/12/cluster-node-js-performance/
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
+const winston = require('winston');
+
+winston.level = process.env.LOG_LEVEL;
 
 if (cluster.isMaster) {
-
-  for (var i = 0; i < numCPUs; i++) {
+  for (let i = 0; i < numCPUs; i += 1) {
     cluster.fork();
   }
 
-  cluster.on('exit', function(worker, code, signal) {
-    console.log('worker ' + worker.process.pid + ' died');
+  Object.keys(cluster.workers).forEach((id) => {
+    winston.log('info ', 'Worker spun with PID', {
+      workerId: cluster.workers[id].process.pid,
+    });
+  });
+
+  cluster.on('exit', (worker, code, signal) => {
+    winston.log('warn', 'Worker died - PID', {
+      workerId: worker.process.pid,
+    });
   });
 } else {
-    console.log('I am worker #' + cluster.worker.id);
-    //change this line to Your Node.js app entry point.
-    require("./app.js");
+  // Do further processing.
+   require('./app.js');
 }

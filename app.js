@@ -1,16 +1,16 @@
-var express=require("express");
-var app=express();
+const express = require('express');
+const winston = require('winston');
 
-var processport = process.env.PROCESS_PORT;
+const app = express();
+const processport = process.env.PROCESS_PORT;
+winston.level = process.env.LOG_LEVEL;
 
-app.get('/',function(req,res){
-
-          res.end("Hello world !");
-
+app.get('/', (req, res) => {
+  res.end("Hello world !");
 });
 
-app.listen(processport,function(){
-
-          console.log("Running at PORT " + processport);
-
+app.listen(processport, () => {
+  winston.log('info', 'Process up at port', {
+    processPort: processport,
+  });
 });

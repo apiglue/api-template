@@ -2,10 +2,17 @@
   "name": "node-template",
   "version": "0.0.1",
   "dependencies": {
+    "eslint": "4.19.1",
     "express": "^4.10.6",
-    "foreman": "2.0.0"
+    "foreman": "2.0.0",
+    "winston": "2.4.1"
   },
   "scripts": {
     "start": "nf start"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-google": "0.9.1",
+    "eslint-plugin-import": "2.9.0"
   }
 }
