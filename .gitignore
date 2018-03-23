@@ -3,3 +3,4 @@ logs/
 app.log
 references
 .env
+logs/app.log
