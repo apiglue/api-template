@@ -1,8 +1,14 @@
 {
   "name": "node-template",
   "version": "0.0.1",
+  "description": "Template of a node api project which I use as a starting point for many of my apis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apiglue/node-template"
+  },
   "dependencies": {
     "app-root-path": "^2.1.0",
+    "dotenv": "^6.0.0",
     "eslint": "5.6.1",
     "express": "^4.10.6",
     "foreman": "^3.0.1",
@@ -10,10 +16,16 @@
     "winston": "3.1.0"
   },
   "scripts": {
-    "start": "nf start"
+    "start": "nf start",
+    "test": "mocha"
   },
+  "author": "Marcelo A @apiglue",
+  "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.14.0"
+    "eslint-plugin-import": "2.14.0",
+    "mocha": "^5.2.0"
   }
 }
