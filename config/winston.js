@@ -31,7 +31,7 @@ const logger = winston.createLogger({
   ],
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'dev') {
   logger.add(new winston.transports.File(options.file));
 }
 
