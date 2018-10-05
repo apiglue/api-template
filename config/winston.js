@@ -3,7 +3,6 @@ const winston = require('winston');
 
 const tsFormat = () => (new Date()).toLocaleTimeString();
 
-// define the custom settings for each transport (file, console)
 const options = {
   file: {
     timestamp: tsFormat,
@@ -19,7 +18,7 @@ const options = {
     handleExceptions: true,
     json: false,
     colorize: true,
-    // timestamp: tsFormat,
+    timestamp: tsFormat,
   },
 };
 
@@ -38,8 +37,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // create a stream object with a 'write' function that will be used by `morgan`
 logger.stream = {
-  write(message, encoding) {
-    // use the 'info' log level so the output will be picked up by both transports (file and console)
+  write(message) {
     logger.info(message);
   },
 };
