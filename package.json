@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "nf start",
-    "test": "mocha"
+    "test": "mocha --exit"
   },
   "author": "Marcelo A @apiglue",
   "license": "ISC",
