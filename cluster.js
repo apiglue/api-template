@@ -3,6 +3,12 @@ const cluster = require('cluster');
 const numWorkers = require('os').cpus().length;
 const logger = require('./config/winston');
 
+if (process.env.NODE_ENV !== 'production') {
+/* eslint-disable global-require */
+  require('dotenv').load();
+/* eslint-enable global-require */
+}
+
 if (cluster.isMaster) {
   logger.info(`Log level: ${logger.level}`);
   logger.info(`Master cluster setting up with ${numWorkers} workers`);
@@ -21,6 +27,7 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  // Do further processing.
+  /* eslint-disable global-require */
   require('./app.js');
+  /* eslint-enable global-require */
 }

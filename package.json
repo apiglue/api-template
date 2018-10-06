@@ -11,12 +11,11 @@
     "dotenv": "^6.0.0",
     "eslint": "5.6.1",
     "express": "^4.10.6",
-    "foreman": "^3.0.1",
     "morgan": "^1.9.1",
     "winston": "3.1.0"
   },
   "scripts": {
-    "start": "nf start",
+    "start": "node cluster.js",
     "test": "mocha --exit"
   },
   "author": "Marcelo A @apiglue",
