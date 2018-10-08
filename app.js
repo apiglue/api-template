@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
   /* eslint-enable global-require */
 }
 
-const processport = process.env.PORT;
+const processport = process.env.PORT || 3000;
 
 app.use(require('morgan')('combined', { stream: logger.stream }));
 // eslint-disable-next-line
