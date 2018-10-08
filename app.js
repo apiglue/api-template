@@ -2,13 +2,15 @@ const express = require('express');
 const logger = require('./config/winston');
 
 const app = express();
-const processport = process.env.PORT;
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require */
   require('dotenv').load();
   /* eslint-enable global-require */
 }
+
+const processport = process.env.PORT;
+
 app.use(require('morgan')('combined', { stream: logger.stream }));
 // eslint-disable-next-line
 app.use((err, req, res, next) => {
