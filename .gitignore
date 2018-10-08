@@ -62,7 +62,9 @@ typings/
 # dotenv environment variables file
 .env
 
-
+.nyc_output
+coverage
+*.lcov
 
 # End of https://www.gitignore.io/api/node
 .vscode

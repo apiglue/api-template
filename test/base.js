@@ -2,6 +2,7 @@
 
 // During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
+process.env.LOG_LEVEL = 'debug';
 
 // Require the dev-dependencies
 const chai = require('chai');
