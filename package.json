@@ -12,7 +12,8 @@
     "eslint": "5.6.1",
     "express": "^4.10.6",
     "morgan": "^1.9.1",
-    "winston": "3.1.0"
+    "winston": "3.1.0",
+    "winston-papertrail": "^1.0.5"
   },
   "scripts": {
     "start": "node cluster.js",
