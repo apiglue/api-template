@@ -13,10 +13,10 @@ chai.should();
 
 chai.use(chaiHttp);
 
-describe('/GET pid', () => {
+describe('/GET health', () => {
   it('it should the pid', (done) => {
     chai.request(server)
-      .get('/pid')
+      .get('/health')
       .end((err, res) => {
         res.should.have.status(200);
         done();
