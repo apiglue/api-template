@@ -14,7 +14,7 @@ chai.should();
 chai.use(chaiHttp);
 
 describe('/GET health', () => {
-  it('it should the pid', (done) => {
+  it('it should the pid number', (done) => {
     chai.request(server)
       .get('/health')
       .end((err, res) => {
