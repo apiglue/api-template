@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "Api Template"
+  description: A template project to help you kickstart you API development
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Marcelo
+    email: apiglued@gmail.com
+    url: http://twitter.com/apiglue
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: yourhostenv.com
+basePath: /
+schemes:
+  - https
+  
+paths:
+  /health:
+    get:
+      description: Return the process id of the running thread
+      operationId: health
+      responses:
+        '200':
+          description: Your response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/YourObject'
+        '400':
+          description: Bad request
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Error'
+        '500':
+          description: Server error
+  
+definitions:
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+      description:
+        type: string
+
+  YourObject:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: some id
+        example: 42
+      quote:
+        type: string
+        description: some response
+        example: 'KEEP CALM and let the API handle it'

@@ -25,8 +25,8 @@ app.listen(processport, () => {
   logger.info(`Process up at port ${processport}`);
 });
 
-app.get('/pid', (req, res) => {
-  res.end(`process ${process.pid} says hello!`);
+app.get('/health', (req, res) => {
+  res.json({ id: `${process.pid}`, description: ' PID says hello!' });
 });
 
 // for testing
