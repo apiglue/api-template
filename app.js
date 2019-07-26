@@ -5,7 +5,7 @@ const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require */
-  require('dotenv').load();
+  require('dotenv');
   /* eslint-enable global-require */
 }
 
