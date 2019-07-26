@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "app-root-path": "^2.1.0",
-    "dotenv": "^6.0.0",
+    "dotenv": "^8.0.0",
     "eslint": "5.6.1",
     "express": "^4.10.6",
     "morgan": "^1.9.1",
@@ -24,8 +24,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "chai-http": "^4.2.0",
-    "coveralls": "^3.0.2",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.0.5",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
     "istanbul": "^1.1.0-alpha.1",
