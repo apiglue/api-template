@@ -14,12 +14,15 @@ chai.should();
 chai.use(chaiHttp);
 
 describe('/GET health', () => {
-  it('it should the pid number', (done) => {
-    chai.request(server)
+  it('it should 200 and have a pid number', (done) => {
+    chai.request.agent(server)
       .get('/health')
       .end((err, res) => {
         res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('id');
         done();
       });
   });
+  after(() => chai.request.agent(server).close());
 });

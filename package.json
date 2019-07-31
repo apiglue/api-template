@@ -7,18 +7,15 @@
     "url": "https://github.com/apiglue/node-template"
   },
   "dependencies": {
-    "app-root-path": "^2.1.0",
-    "dotenv": "^8.0.0",
-    "eslint": "5.6.1",
+    "body-parser": "^1.19.0",
     "express": "^4.10.6",
     "morgan": "^1.9.1",
-    "winston": "3.1.0",
-    "winston-papertrail": "^1.0.5"
+    "winston": "^3.2.1"
   },
   "scripts": {
-    "start": "node cluster.js",
-    "test": "mocha --exit",
-    "report-coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --exit && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "start": "node app.js",
+    "test": "nyc mocha tests/*.js --timeout 10000 --exit",
+    "coverage": "nyc --reporter=lcov npm test"
   },
   "author": "Marcelo A @apiglue",
   "license": "ISC",
@@ -26,9 +23,12 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "coveralls": "^3.0.5",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.14.0",
+    "dotenv": "^8.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^5.2.0"
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
   }
 }

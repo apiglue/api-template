@@ -1,5 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const logger = require('./config/winston');
+
+// support encoded bodies
 
 const app = express();
 
@@ -11,7 +14,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 const processport = process.env.PORT || 3000;
 
-app.use(require('morgan')('combined', { stream: logger.stream }));
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
+
+app.use(require('morgan')('combined', {
+  stream: logger.stream,
+}));
 // eslint-disable-next-line
 app.use((err, req, res, next) => {
   logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -26,8 +36,15 @@ app.listen(processport, () => {
 });
 
 app.get('/health', (req, res) => {
-  res.json({ id: `${process.pid}`, description: ' PID says hello!' });
+  res.json({
+    id: `${process.pid}`,
+    description: ' PID says hello!',
+  });
 });
+app.post('/test', (req, res) => {
+  res.json(req.body);
+});
+
 
 // for testing
 module.exports = app;
