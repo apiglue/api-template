@@ -23,16 +23,18 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-app.listen(processport, () => {
-  logger.info(`Process up at port ${processport}`);
-});
-
 app.get('/health', (req, res) => {
   res.json({
     id: `${process.pid}`,
     description: `${process.pid} PID says hello!`,
   });
 });
+
+if (!module.parent) {
+  app.listen(processport, () => {
+    logger.info(`Process up at port ${processport}`);
+  });
+}
 
 // for testing
 module.exports = app;

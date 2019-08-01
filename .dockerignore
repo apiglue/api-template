@@ -8,3 +8,5 @@ logs/*
 .cache
 .travis.yml
 .eslintrc.js
+sonar-project.properties
+README.md
