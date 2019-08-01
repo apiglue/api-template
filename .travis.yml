@@ -9,5 +9,5 @@ addons:
 script:
   # other script steps might be done before running the actual analysis
   - npm run test
-  - npm run report-coverage
+  - npm run coverage
   - sonar-scanner

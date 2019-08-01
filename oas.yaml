@@ -25,17 +25,15 @@ paths:
         '200':
           description: Your response
           schema:
-            type: array
-            items:
               $ref: '#/definitions/YourObject'
         '400':
           description: Bad request
           schema:
-            type: array
-            items:
               $ref: '#/definitions/Error'
         '500':
           description: Server error
+          schema:
+              $ref: '#/definitions/Error'          
   
 definitions:
   Error:
@@ -53,10 +51,9 @@ definitions:
     properties:
       id:
         type: integer
-        format: int64
-        description: some id
-        example: 42
-      quote:
+        description: process id
+        example: 18344
+      description:
         type: string
         description: some response
-        example: 'KEEP CALM and let the API handle it'
+        example: 'PID says hello!'

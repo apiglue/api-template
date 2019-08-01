@@ -2,7 +2,7 @@
 
 # Custom
 references
-logs/app.log
+logs/*
 
 # Logs
 *.log
