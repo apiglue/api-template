@@ -1,6 +1,6 @@
 {
   "name": "node-template",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "Template of a node api project which I use as a starting point for many of my apis",
   "repository": {
     "type": "git",
