@@ -2,19 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('./config/winston');
 
-// support encoded bodies
-
 const app = express();
-
-if (process.env.NODE_ENV !== 'production') {
-  /* eslint-disable global-require */
-  require('dotenv');
-  /* eslint-enable global-require */
-}
 
 const processport = process.env.PORT || 3000;
 
-app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
@@ -38,13 +30,9 @@ app.listen(processport, () => {
 app.get('/health', (req, res) => {
   res.json({
     id: `${process.pid}`,
-    description: ' PID says hello!',
+    description: `${process.pid} PID says hello!`,
   });
 });
-app.post('/test', (req, res) => {
-  res.json(req.body);
-});
-
 
 // for testing
 module.exports = app;

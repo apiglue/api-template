@@ -1,3 +1,10 @@
 node_modules
+.dockerignore
+Dockerfile
 npm-debug.log
-logs
+.git
+logs/*
+.nyc_output
+.cache
+.travis.yml
+.eslintrc.js

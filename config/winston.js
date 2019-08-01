@@ -1,4 +1,7 @@
 const winston = require('winston');
+const path = require('path');
+
+const logDir = 'logs'; // directory path you want to set
 
 const tsFormat = () => (new Date()).toLocaleTimeString();
 
@@ -12,13 +15,13 @@ const logger = winston.createLogger({
   transports: [
 
     new winston.transports.File({
-      filename: 'logs/error.log',
+      filename: path.join(logDir, '/error.log'),
       json: true,
       level: 'error',
       timestamp: tsFormat,
     }),
     new winston.transports.File({
-      filename: 'logs/app.log',
+      filename: path.join(logDir, '/app.log'),
     }),
   ],
 });
